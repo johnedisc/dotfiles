@@ -1,4 +1,4 @@
-##neovim dotfiles
+## neovim dotfiles
 
 #### this is simply a document that shows--myself more than anyone--that i have begun to
 
