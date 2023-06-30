@@ -18,6 +18,9 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 
+vim.o.clipboard = "unnamed"
+
 vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
+

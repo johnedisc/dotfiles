@@ -12,14 +12,10 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  require("rose-pine").setup()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
+
+  -- colorscheme
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
+  vim.cmd('colorscheme rose-pine')
 
   use('nvim-treesitter/nvim-treesitter', {run = ':tsupdate'})
   use('nvim-treesitter/playground')
@@ -28,15 +24,16 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
 
-  use({ 
-    "iamcco/markdown-preview.nvim", 
-    run = "cd app && npm install", 
-    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, 
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
     ft = { "markdown" }, })
 
-  use({"folke/neodev.nvim",
-    require("neodev").setup(),
-    })
+--  use({"folke/neodev.nvim",
+--    require("neodev").setup(),
+--    })
+  use 'folke/neodev.nvim'
 
   use 'mfussenegger/nvim-dap'
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
@@ -76,5 +73,7 @@ return require('packer').startup(function(use)
       {'rafamadriz/friendly-snippets'}, -- Optional
     }
   }
+
+  use { 'https://codeberg.org/esensar/nvim-dev-container' }
 
 end)
