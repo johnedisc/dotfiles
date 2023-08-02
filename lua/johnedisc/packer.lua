@@ -19,20 +19,10 @@ return require('packer').startup(function(use)
 
   use('nvim-treesitter/nvim-treesitter', {run = ':tsupdate'})
   use('nvim-treesitter/playground')
-  use('nvim-lua/plenary.nvim')
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
 
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
-    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-    ft = { "markdown" }, })
-
---  use({"folke/neodev.nvim",
---    require("neodev").setup(),
---    })
   use 'folke/neodev.nvim'
 
   use 'mfussenegger/nvim-dap'
@@ -65,11 +55,7 @@ return require('packer').startup(function(use)
       {'hrsh7th/cmp-nvim-lua'},     -- Optional
 
       -- Snippets
-      {"L3MON4D3/LuaSnip",
-        -- follow latest release.
-        tag = "v<CurrentMajor>.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-        -- install jsregexp (optional!:).
-        run = "make install_jsregexp"},             -- Required
+      {"L3MON4D3/LuaSnip"},
       {'rafamadriz/friendly-snippets'}, -- Optional
     }
   }
