@@ -22,13 +22,16 @@ return require('packer').startup(function(use)
   use('nvim-lua/plenary.nvim')
   use('theprimeagen/harpoon')
   use('mbbill/undotree')
-  use('tpope/vim-fugitive')
+  --
 
+  -- MARKDOWN STUFF
+  use {"ellisonleao/glow.nvim", config = function() require("glow").setup() end}
+  -- install without yarn or npm
   use({
     "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
-    setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
-    ft = { "markdown" }, })
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
 --  use({"folke/neodev.nvim",
 --    require("neodev").setup(),
@@ -38,9 +41,9 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-dap'
   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
   use 'thehamsta/nvim-dap-virtual-text'
-  use {'dsznajder/vscode-es7-javascript-react-snippets',
-    run = 'yarn install --frozen-lockfile && yarn compile'
-  }
+--  use {'dsznajder/vscode-es7-javascript-react-snippets',
+--    run = 'yarn install --frozen-lockfile && yarn compile'
+--  }
 
   use {
       'VonHeikemen/lsp-zero.nvim',
@@ -57,23 +60,22 @@ return require('packer').startup(function(use)
       {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},         -- Required
       {'hrsh7th/cmp-nvim-lsp'},     -- Required
       {'hrsh7th/cmp-buffer'},       -- Optional
       {'hrsh7th/cmp-path'},         -- Optional
       {'saadparwaiz1/cmp_luasnip'}, -- Optional
       {'hrsh7th/cmp-nvim-lua'},     -- Optional
+      {'hrsh7th/cmp-cmdline'},      -- Optional
+      {'hrsh7th/nvim-cmp'},         -- Required
 
       -- Snippets
-      {"L3MON4D3/LuaSnip",
-        -- follow latest release.
-        tag = "v<CurrentMajor>.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-        -- install jsregexp (optional!:).
-        run = "make install_jsregexp"},             -- Required
+      {"L3MON4D3/LuaSnip"},
+      {'saadparwaiz1/cmp_luasnip'},
       {'rafamadriz/friendly-snippets'}, -- Optional
     }
   }
 
-  use { 'https://codeberg.org/esensar/nvim-dev-container' }
+  use { 'tpope/vim-fugitive' }
+--  use { 'https://codeberg.org/esensar/nvim-dev-container' }
 
 end)
