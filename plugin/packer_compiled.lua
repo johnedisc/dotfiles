@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/johnedisc/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/johnedisc/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/johnedisc/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -154,11 +159,6 @@ _G.packer_plugins = {
     path = "/home/johnedisc/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
     url = "https://github.com/thehamsta/nvim-dap-virtual-text"
   },
-  ["nvim-dev-container"] = {
-    loaded = true,
-    path = "/home/johnedisc/.local/share/nvim/site/pack/packer/start/nvim-dev-container",
-    url = "https://codeberg.org/esensar/nvim-dev-container"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/johnedisc/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -183,6 +183,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/johnedisc/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["rest.nvim"] = {
+    loaded = true,
+    path = "/home/johnedisc/.local/share/nvim/site/pack/packer/start/rest.nvim",
+    url = "https://github.com/rest-nvim/rest.nvim"
   },
   ["rose-pine"] = {
     loaded = true,

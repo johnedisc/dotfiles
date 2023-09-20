@@ -60,6 +60,11 @@ return require('packer').startup(function(use)
     }
   }
 
-  use { 'https://codeberg.org/esensar/nvim-dev-container' }
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use { "rest-nvim/rest.nvim", requires = { "nvim-lua/plenary.nvim" }, }
 
 end)
