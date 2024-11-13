@@ -23,6 +23,12 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
 
+  use {
+    'dinhhuy258/vim-database',
+    branch = 'master', 
+    run = ':UpdateRemotePlugins'
+  }
+
   use 'folke/neodev.nvim'
 
   use 'mfussenegger/nvim-dap'
